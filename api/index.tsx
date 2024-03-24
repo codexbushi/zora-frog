@@ -27,7 +27,10 @@ app.frame('/', (c) => {
     intents: [
       <TextInput placeholder="Value (ETH)" />,
       <Button.Transaction target="/send-ether">Send Ether</Button.Transaction>,
-      <Button.Transaction target="/mint">Mint</Button.Transaction>,
+      <Button.Transaction target="/mint">Transaction Mint</Button.Transaction>,
+      <Button.Mint target="eip155:8453:0x04c376fa8fcc8a9991a8513b75bb3fd9d37581c8:1">
+        Mint
+      </Button.Mint>,
     ],
   })
 })
@@ -59,8 +62,14 @@ app.transaction('/mint', (c) => {
 
   return c.contract({
     abi: Zora1155ABI,
-    functionName: 'adminMint',
-    args: [address, 1n, 1n, '0x'],
+    functionName: 'mintWithRewards',
+    args: [
+      '0x04c376fa8fcc8a9991a8513b75bb3fd9d37581c8',
+      1n,
+      1n,
+      '0x',
+      '0xf7e89E45502890381F9242403eA8661fad89Ca79',
+    ],
     chainId: 'eip155:8453',
     // chainId: 'eip155:84532',
     to: '0x04c376fa8fcc8a9991a8513b75bb3fd9d37581c8',
