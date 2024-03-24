@@ -1731,7 +1731,7 @@ app.frame('/', (c) => {
     intents: [
       <TextInput placeholder="Value (ETH)" />,
       <Button.Transaction target="/send-ether">Send Ether</Button.Transaction>,
-      // <Button.Transaction target="/mint">Mint</Button.Transaction>,
+      <Button.Transaction target="/mint">Mint</Button.Transaction>,
     ],
   })
 })
