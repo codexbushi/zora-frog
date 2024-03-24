@@ -8,6 +8,7 @@
     "deploy": "vercel"
   },
   "dependencies": {
+    "@zoralabs/v3": "^1.0.13",
     "frog": "latest",
     "hono": "^4"
   },
